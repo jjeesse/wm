@@ -1,0 +1,13 @@
+	<form name"nested-comment" method="post" action="" enctype="multipart/form-data">{% csrf_token %}	
+		<div class="row">	
+			<div class="col-md-12">
+				<div class="input-group">	
+					<input type="text" id="nested_content" name="nested_content" class="form-control" placeholder="What do you want to say?">
+					<div class="input-group-btn">
+						<input type = "hidden" id ="base_comment_hidden" name = "base_comment_hidden" value = "{{ comment.pk }}">
+						<button type="submit" class="btn btn-default"> Reply </button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>

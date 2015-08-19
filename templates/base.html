@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Bootstrap core CSS-->
+	<title> WhizMill </title>
+	<link href="{% static 'css/bootstraptesting.min.css' %}" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="{% static 'css/custom.css' %}" rel="stylesheet">
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/png" href="{% static 'our_images/favicon.ico' %}"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+	<style>
+	</style>
+	<div class="container">
+		{% include 'navbar.html' %}
+		{% block content %}
+		{% endblock content %}
+	</div>
+	<!-- Bootstrap core JavaScript-->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+</body>
+</html>

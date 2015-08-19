@@ -1,0 +1,48 @@
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">WhizMill</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Spotlight</a></li>
+            <li><a href="/justin">Just In</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="/profile/bitcoins"><span class="badge">Balance: {{ user.balance }}</span></a></li>
+            {% else %}
+            {% endif %}
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/submit/">Submit</a></li>
+            {% if user.is_authenticated %}
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{ user.get_username }}<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li> <a href="../profile"> My Profile </a></li> 
+                <li><a href="/btcdeposit/">Deposit</a></li>
+                <li><a href="/profile/settings/">Settings</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/signout/">Signout</a></li>
+              </ul>
+            </li>         
+            {% else %}
+            <li><a href="/accounts/login"> Social Auth </a></li>
+            <li><a href="/signin/">Signin</a></li>
+            <li><a href="/signup/">Signup</a></li>
+            {% endif %}
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Helpers <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/admin/"> Admin </a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/btcdeposit/"> BTC Deposit</a></li>
+                <li><a href="/btcwithdraw/"> BTC Withdraw </a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/test/"> Tests </a></li>
+              </ul>
+            </li>        
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>

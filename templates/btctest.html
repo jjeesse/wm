@@ -1,0 +1,9 @@
+{% extends "profile.html" %}
+{% block prof_content %}
+<div class ="row">
+<h1> Bitcoin Balance: {{ bitcoins }} </h1>
+<a href="/btcdeposit/"><button type="submit" class="btn btn-primary" name="bu" value=""> Deposit </button></a>
+<a href="/btcwithdraw/"><button type="submit" class="btn btn-primary" name="bu" value=""> Withdraw </button></a>
+</div>
+{% endblock prof_content %}
+

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="main_form_content" class="container">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-4" >
+    <form id="login_form" class="center" method="post" action="">
+      {% csrf_token %}
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" class="form-control" placeholder="Username" autofocus><br>         
+      <label for="loginPassword">Password</label>
+      <input type="password" name="password" id="loginPassword" class="form-control" placeholder="Password"><br>
+      <input type="submit" name="login" class="btn btn-primary col-md-12 login-button" value="Login"/><br><br><br>
+      <div>
+        <input type="submit" name ="forgotPassword" class="btn btn-info col-md-6"value="Forgot password?"/>
+        <input type="submit" name="register" class="btn btn-info col-md-6"value="Register"/>
+        <h3>---------------------------------</h3>
+        <a href="#"> Forgot your password? Click here to recover. </a><br>
+        <a href="#"> Don't have an account? Join now! </a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}

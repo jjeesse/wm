@@ -1,0 +1,32 @@
+<!-- Inherit ALL from templates -->
+{% extends "base.html" %}
+{% load staticfiles %}
+<!-- In-Template Code -->
+{% block content %}
+<!--ajax-->	
+{% csrf_token %}
+<div id="main_post_content" class="row">
+	<div class="col-md-9">
+		<!-- Load Twitter-Style Endless Pagination in WebView -->
+		{% include page_template %}
+		{% block js %}
+		{{ block.super }}
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/static/js/endless-pagination.js"></script>
+		<script>$.endlessPaginate({paginateOnScroll: true});</script>
+		{% endblock js %}
+		<!-- END Twitter-Style Pagination -->
+	</div>
+	<div class="col-md-3"><br><br>
+		{% if user.is_authenticated %}
+		{% else %}
+		{% endif %}
+		<!-- FIXED Position DIV -->
+		<div data-spy="affix">
+			<a href="/random/"><button type="button" class="btn btn-primary"> Jump to Random Date </button></a><br><br>
+			<img src="/static/our_images/android-app-google-play.jpg" style="width:48%;"><br>
+			<img src="/static/our_images/appstore.png" style="width:30%;">
+		</div>
+	</div>
+</div>
+{% endblock content %}

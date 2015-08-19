@@ -1,0 +1,73 @@
+{% extends "profile_base.html" %}
+{% block prof_content %}
+<ul class="nav nav-tabs">
+	<li class="active"><a data-toggle="tab" href="#prof_pic">Profile Picture</a></li>
+	<li><a data-toggle="tab" href="#info"> Information </a></li>
+	<li><a data-toggle="tab" href="#password"> Password Change </a></li>
+	<li><a data-toggle="tab" href="#about"> About WhizMill </a></li>
+</ul>
+<div class="tab-content col-md-9">
+	<div id="prof_pic" class="tab-pane fade in active">
+		<div class="col-md-5">
+			<h3>Profile Picture</h3>
+			<div style="max-height:200px;overflow:hidden">
+				<img src="/{{ img }}" class="img-rounded "style="width:200px;">
+			</div>	
+		</div>	
+
+		<div class="col-md-4"><br>
+			<form action="" enctype="multipart/form-data" method="POST">
+				{% csrf_token %}
+
+				<p><label for="id_profile_pic">Profile pic:</label> 
+					<input id="id_profile_pic" name="profile_pic2" type="file" />
+				</p>
+
+
+
+				<label for="profile_pic"> Upload </label>
+				<input type="file" name="profile_pic" id="profile_pic"><br>
+
+				<input type="submit" name="Submit" class="btn btn-primary" value="Submit" />
+			</form>
+		</div>
+	</div>
+		<div id="info" class="tab-pane fade">
+			<h3> Personal Information </h3>
+				<form id="tab">
+					<label>Username</label><br>
+					<input type="text" value="{{ user.username }}"  class="input-xlarge"disabled>
+					<br>
+					<label>First Name</label><br>
+					<input id="first_name" type="text" value="{{ user.first_name }}" class="input-xlarge" placeholder="{{ user.first_name }}">
+					<br>
+					<label>Last Name</label><br>
+					<input id ="last_name" type="text" value="{{ user.last_name }}" class="input-xlarge" placeholder="{{ user.last_name }}">
+					<br>
+					<label>Email</label><br>
+					<input id = "email"type="text" value="{{ user.email }}" class="input-xlarge">
+					<br>
+					<label>Old password</label><br>
+					<input id ="old_pas" type="password" class="input-xlarge">
+					<br>
+					<label>New password</label><br>
+					<input id = "new_pas"type="password" class="input-xlarge">
+					<br>
+					<label>Re-type new password</label><br>
+					<input id="rnew_pas"type="password" class="input-xlarge">
+					<br>
+
+					<div>
+						<button class="btn btn-primary">Update</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="menu2" class="tab-pane fade">
+			<h3>Menu 2</h3>
+			<p>Some content in menu 2.</p>
+		</div>
+	</div>
+	{% endblock prof_content %}
+
+

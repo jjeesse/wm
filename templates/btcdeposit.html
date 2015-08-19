@@ -1,0 +1,11 @@
+{% extends "profile.html" %}
+{% block prof_content %}
+<form action="" enctype="multipart/form-data" method="POST">
+			{% csrf_token %}
+			<label for="deposit_amount">Deposit Amount</label>
+          	<input type="number" step="any" name="deposit_Amount" id="deposit_amount" class="form-control" placeholder="ex. 0.0001" autofocus><br>
+			<input type="submit" name ="Submit" class="btn btn-primary col-md-6" value="submit"/>
+		</form><br>
+  		<h3>{{ muuttuja.amount }}<h3>
+  		<h3>{{ muuttuja.bitcoin_address }}<h3>
+{% endblock prof_content %}

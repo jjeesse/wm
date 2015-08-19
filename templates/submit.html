@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="main_form_content" class="container">
+	<div class="col-md-3"></div>
+	<div class="col-md-6" >
+		<form action="" enctype="multipart/form-data" method="POST" class="col-md-12">
+			{% csrf_token %}
+			<label for="title"> Title </label>
+			<input type="text" name="title" id="title" class="form-control" placeholder="Choose your title" autofocus><br>
+			<label for="post_content"> Pick an Image or GIF to upload </label>
+    		<input type="file" name="post_content" id="post_content"><br>
+			<input type="submit" name ="Submit" class="btn btn-primary col-md-6" value="submit" />
+		</form>
+	</div>
+</div>
+{% endblock content %}

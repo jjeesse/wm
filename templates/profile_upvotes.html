@@ -1,0 +1,29 @@
+{% extends "profile_base.html" %}
+{% block prof_content %}
+<h1>My Upvotes</h1>
+{% for post in upvotes_list %}
+<form action="" method="post">
+	{% csrf_token %}
+	<h3 style="text-align:center;"> {{ post.title }}</h3>	
+	<!-- Jos kuvasta klikkaa, ohjaa tuonne.-->
+	<a href="/{{ post.related_post.pk }}" class="">
+		<!-- kroppaa kuvan jos liian korkea  kokeillaan-->
+		<div style="max-height:800px;overflow:hidden">
+			<img src="/{{ post.related_post.post_content }}" style="max-width:80%;" align="middle"  name="image"  class="img-rounded auto_center_left_right" >
+		</div>
+	</a><br>
+	<p>
+		<div role="group" style="margin-left:35%;">
+			<button type="button" id="ajaxbutton" class="btn btn-primary upvote" name="ajaxbutton" value="{{ post.pk }}" data-update-id="upvotes_{{ post.pk }}" data-postid ="{{ post.pk }}">	
+				<span class="glyphicon glyphicon-bitcoin" aria-hidden="true"></span> 
+				Upvotes:  {{ post.related_post.upvotes }} </button>
+				<a href="/{{ post.pk }}"><button type="button" class="btn btn-primary upvote">	
+					<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+					Comments:  {{ post.related_post.noc }} </button><br></a> 
+
+				</div>
+			</form>
+			<p><hr style="height:1px;background-color:#999999;" /></p>
+			{% endfor %}
+{% endblock prof_content %}
+

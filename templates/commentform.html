@@ -1,0 +1,16 @@
+{% if user.is_authenticated %}
+<form method="post" action="" enctype="multipart/form-data">{% csrf_token %}	
+	<div class="row">	
+		<div class="col-md-12">
+			<div class="input-group">
+				<input type="text" id="comment_content" name="comment_content" class="form-control" placeholder="Comment" >
+				<div class="input-group-btn">
+					<button type="submit" id="add_comment_button" name = "add_comment_button" class="btn btn-default comment">Send</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+{% else %}
+<p><a href="/signin">Login to comment</a></p>
+{% endif %}	

@@ -1,0 +1,11 @@
+{% extends "profile.html" %}
+{% block prof_content %}
+<form action="" enctype="multipart/form-data" method="POST">
+			{% csrf_token %}
+			<label for="withdrawal_amount">Withdrawal Amount</label>
+          	<input type="number" step="any" name="withdrawal_amount" id="withdrawal_amount" class="form-control" placeholder="ex. 0.0001" autofocus><br>
+          	<label for="withdrawal_address">Withdrawal Address</label>
+          	<input type="text" name="withdrawal_address" id="withdrawal_address" class="form-control" placeholder="Post a valid Bitcoin address here." autofocus><br>
+			<input a type="submit" name="Submit" class="btn btn-primary btn-lg col-md-6" value="submit" />
+		</form>
+{% endblock prof_content %}
