@@ -19,7 +19,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from wmposts.views import index, submit, singlepost, upvote, justin, random
 from wmuser.views import signup, signin, signout, account_holdings, changePassword, profileComments, profileSettings, profileUpvotes, profileMyPosts, profile
-from wmbitcoin.views import bitcointest, deposit, withdraw, CallBack, comment_upvote, nested_comment_upvote
+from wmbitcoin.views import bitcointest, deposit,  CallBack, comment_upvote, nested_comment_upvote#withdraw,
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
