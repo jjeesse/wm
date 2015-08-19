@@ -35,7 +35,7 @@ urlpatterns = [
     url(r'^btc/', account_holdings),
     url(r'^test/', bitcointest),
     url(r'^btcdeposit/', deposit),
-    url(r'^btcwithdraw/', withdraw),
+#    url(r'^btcwithdraw/', withdraw),
     url(r'^profile/bitcoins', deposit),
     url(r'^profile/settings', profileSettings),
     url(r'^profile/upvotes', profileUpvotes),
