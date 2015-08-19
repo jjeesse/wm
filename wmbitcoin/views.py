@@ -83,6 +83,7 @@ def deposit(request):
 		context_instance=RequestContext(request)
 		)
 
+'''
 @login_required
 def withdraw(request):
 	
@@ -108,6 +109,8 @@ def withdraw(request):
 		{'form':form},
 		context_instance=RequestContext(request)
 		)
+'''
+
 
 @csrf_exempt
 def CallBack(request):
