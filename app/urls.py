@@ -52,6 +52,8 @@ urlpatterns = [
     # Coinbase API Callback URL
     url(r'^callback/secret=ferraripojatlolxd/$', CallBack), 
     
+    url(r'^faq',index) #tanne oikea redirect
+    
     
 
  #  url(r'^.*$', RedirectView.as_view(url='wrongurl', permanent=False), name='wrong'), uudelleen ohjaa jos vaara url, toimii huonosti ?

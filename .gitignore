@@ -1,0 +1,21 @@
+#virtual environment
+env/
+
+#database
+app/db.sqlite3
+
+#database migrations
+app/wmposts/migrations/
+app/wmuser/migrations/
+app/wmbitcoin/migrations/
+app/wmcomment/migrations/
+app/testing/migrations/
+
+#images -- database dependent. Mainly posts
+app/static/posts_main
+
+static/
+staticfiles/
+#suggested by Heroku
+*.pyc
+static
