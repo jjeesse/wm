@@ -29,7 +29,7 @@ SECRET_KEY = '!$-^kgn&eu8l*hv6q89hf%s26-y%9_didhui=ikl%=)%)$p3s$'
 
 
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -114,7 +114,7 @@ DATABASES = {
         'NAME': 'whizmilldb',                    
         'USER': 'test',
         'PASSWORD': 'tesla',
-        'HOST': 'localhost', # 'localhost' jos local, muuten tyhja
+        'HOST':'' , # 'localhost' jos local, muuten tyhja
         'PORT': '',
     }
 }
@@ -207,7 +207,7 @@ ENDLESS_PAGINATION_PER_PAGE=10
 # Django AllAuth Settings
 ACCOUNT_ADAPTER = 'wmuser.adapter.CustomAccountAdapter'
 
-# Default User Model
+# Default User Models 
 AUTH_USER_MODEL = 'wmuser.BaseUser'
 
 
@@ -216,12 +216,12 @@ BTC_TO_EUR = 253.16
 
 
 
-
 #Heroku stuff
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
+
 #Comment if running locally 
-#DATABASES['default'] =  dj_database_url.config()
+DATABASES['default'] =  dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
