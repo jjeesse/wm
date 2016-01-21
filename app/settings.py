@@ -29,7 +29,7 @@ SECRET_KEY = '!$-^kgn&eu8l*hv6q89hf%s26-y%9_didhui=ikl%=)%)$p3s$'
 
 
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
