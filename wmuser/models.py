@@ -9,7 +9,7 @@ class BaseUser(AbstractUser):
 	
 	# Additional fields
 	profile_pic = models.ImageField(upload_to='static/profile_pics', default="static/profile_pics/user-placeholder.png")
-	balance = models.IntegerField(default=0)
+	balance = models.IntegerField(default=10)
 	custom_like_value = models.IntegerField(default=1)
 	
 	# Return for AdminSite 
